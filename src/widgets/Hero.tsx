@@ -68,10 +68,27 @@ export const Hero = () => {
 
           <div className="flex items-center gap-10">
             <Button variant="default" className="px-20">
-              <Typography variant="button">Получить аудит</Typography>
+              <Typography variant="button" className="flex items-center gap-2">
+                Получить аудит
+                <div className="flex items-center justify-center">
+                  <div className="rotate-180 scale-y-[-100%]">
+                    <div className="w-[27px] h-[27px]">
+                      <Image
+                        src={imgSend}
+                        alt="send icon"
+                        width={27}
+                        height={27}
+                        className="w-full h-full"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </Typography>
             </Button>
             <Button variant="white">
-              <Typography variant="button">Запросить коммерческое предложение</Typography>
+              <Typography variant="button">
+                Запросить коммерческое предложение
+              </Typography>
             </Button>
           </div>
         </div>
