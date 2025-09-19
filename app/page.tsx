@@ -1,4 +1,4 @@
-import { Button } from "@/shadcn/components/ui/button";
+import { Button } from "@/shared";
 import Image from "next/image";
 
 export default function Home() {
@@ -42,7 +42,7 @@ export default function Home() {
             />
             Deploy now
           </a>
-          <Button>Read our docs</Button>
+          <Button variant="white">Read our docs</Button>
         </div>
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
