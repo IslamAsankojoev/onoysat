@@ -7,7 +7,7 @@ import { Gilroy, Intro } from '@/shared/constants'
 
 interface TypographyProps extends HTMLProps<HTMLParagraphElement> {
   children: React.ReactNode
-  variant?: 'h1' | 'h2' | 'bodyL' | 'bodyS' | 'bodyItalic' | 'captionM' | 'button'
+  variant?: 'h1' | 'h2' | 'bodyL' | 'bodyS' | 'bodyItalic' | 'bodyM' | 'button'
 }
 
 const variantStyles: Record<string, string> = {
@@ -16,7 +16,7 @@ const variantStyles: Record<string, string> = {
   bodyL: clsx('text-bodyL font-medium', Gilroy.className),
   bodyS: clsx('text-bodyS font-normal', Gilroy.className),
   bodyItalic: clsx('text-bodyItalic font-normal italic', Gilroy.className),
-  captionM: clsx('text-captionM font-semibold', Gilroy.className),
+  bodyM: clsx('text-bodyM font-semibold', Gilroy.className),
   button: clsx('text-button font-medium', Gilroy.className),
 }
 
