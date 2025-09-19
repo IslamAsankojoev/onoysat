@@ -11,8 +11,8 @@ interface TypographyProps extends HTMLProps<HTMLParagraphElement> {
 }
 
 const variantStyles: Record<string, string> = {
-  h1: clsx('text-H1 font-bold leading-none', Intro.className),
-  h2: clsx('text-H2 font-bold leading-none', Gilroy.className),
+  h1: clsx('text-h1 font-bold leading-none', Intro.className),
+  h2: clsx('text-h2 font-normal leading-none', Gilroy.className),
   bodyL: clsx('text-bodyL font-medium', Gilroy.className),
   bodyS: clsx('text-bodyS font-normal', Gilroy.className),
   bodyItalic: clsx('text-bodyItalic font-normal italic', Gilroy.className),

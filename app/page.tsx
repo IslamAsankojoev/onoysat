@@ -1,4 +1,4 @@
-import { Application, Help, Hero, Services } from '@/widgets'
+import { Application, FAQ, Help, Hero, Services } from '@/widgets'
 
 export default function Home() {
   return (
@@ -7,6 +7,7 @@ export default function Home() {
       <Help />
       <Services />
       <Application />
+      <FAQ />
     </div>
   )
 }
