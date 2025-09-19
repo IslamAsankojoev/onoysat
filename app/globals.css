@@ -120,16 +120,15 @@
   --text-bodyM:     clamp(10px, 3.5vw, 18px);
   --text-button:    clamp(13px, 4vw, 16px);
 
-  /* Кастомные цвета */
-  --accent-primary: #0059FF;
-  --dark-deep: #000000;
-  --white-pure: #FEFEFE;
-  --blue-dark: #1A1E2B;
-  --footer-grey: #42474E;
-  --white-glass: rgba(255, 255, 255, 0.1);
-  --grey-input: #8D97AF;
-  --gradient-flow: linear-gradient(180deg, #ffffff 0%, #0059FF 100%);
-  --gradient-dark: linear-gradient(180deg, #0B042D 0%, #210D79 100%);
+  --color-accent-primary: #0059FF;
+  --color-dark-deep: #000000;
+  --color-white-pure: #FEFEFE;
+  --color-blue-dark: #1A1E2B;
+  --color-footer-grey: #42474E;
+  --color-white-glass: rgba(255, 255, 255, 0.1);
+  --color-grey-input: #8D97AF;
+  --color-gradient-flow: linear-gradient(180deg, #ffffff 0%, #0059FF 100%);
+  --color-gradient-dark: linear-gradient(180deg, #0B042D 0%, #210D79 100%);
 
   --breakpoint-*: initial;
   --breakpoint-sm: 640px;
