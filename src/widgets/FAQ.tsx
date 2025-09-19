@@ -4,20 +4,22 @@ import { Typography } from '@/shared/ui'
 import { useState } from 'react'
 import { Minus, Plus } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useScrollAnimation } from '@/shared/hooks/useScrollAnimation'
 
 interface FAQItemProps {
   question: string
   answer?: string
   isOpen: boolean
   onToggle: () => void
+  isInView: boolean
 }
 
-const FAQItem = ({ question, answer, isOpen, onToggle }: FAQItemProps) => {
+const FAQItem = ({ question, answer, isOpen, onToggle, isInView }: FAQItemProps) => {
   return (
     <motion.div 
       className="bg-white-pure w-full overflow-hidden"
       initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ duration: 0.3 }}
       whileHover={{ scale: 1.02 }}
     >
@@ -68,6 +70,8 @@ const FAQItem = ({ question, answer, isOpen, onToggle }: FAQItemProps) => {
 
 export const FAQ = () => {
   const [openItems, setOpenItems] = useState<number[]>([])
+  const { ref: titleRef, isInView: titleInView } = useScrollAnimation()
+  const { ref: faqRef, isInView: faqInView } = useScrollAnimation()
 
   const faqData = [
     {
@@ -102,13 +106,14 @@ export const FAQ = () => {
     <div className="bg-black w-full py-[100px]">
       <div className="container mx-auto px-4">
         <div className="max-w-[1180px] mx-auto">
-          {/* Заголовок */}
-          <motion.div 
-            className="text-center mb-[50px]"
-            initial={{ opacity: 0, y: -30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-          >
+        {/* Заголовок */}
+        <motion.div 
+          ref={titleRef}
+          className="text-center mb-[50px]"
+          initial={{ opacity: 0, y: -30 }}
+          animate={titleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
             <Typography variant="h1" className="text-white-pure text-left">
               Часто задаваемые вопросы (FAQ)
             </Typography>
@@ -116,16 +121,17 @@ export const FAQ = () => {
 
           {/* Аккордеон */}
           <motion.div 
+            ref={faqRef}
             className="flex flex-col gap-3"
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            animate={faqInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             {faqData.map((item, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                animate={faqInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ 
                   duration: 0.4, 
                   delay: index * 0.1,
@@ -137,6 +143,7 @@ export const FAQ = () => {
                   answer={item.answer}
                   isOpen={openItems.includes(index)}
                   onToggle={() => toggleItem(index)}
+                  isInView={faqInView}
                 />
               </motion.div>
             ))}
