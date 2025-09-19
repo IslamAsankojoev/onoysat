@@ -26,7 +26,7 @@ export const Header = () => {
   }
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 md:h-24 h-16 flex items-center bg-blue-dark">
+    <div className="fixed top-0 left-0 right-0 z-50 md:h-24 h-16 flex items-center border-b border-white/10 backdrop-blur-md">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           <Image src={logo} alt="logo" width={50} height={50} />

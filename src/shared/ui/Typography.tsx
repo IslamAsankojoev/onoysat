@@ -7,12 +7,12 @@ import { Gilroy, Intro } from '@/shared/constants'
 
 interface TypographyProps extends HTMLProps<HTMLParagraphElement> {
   children: React.ReactNode
-  variant?: 'headingXL' | 'headingS' | 'bodyL' | 'bodyS' | 'bodyItalic' | 'captionM' | 'button'
+  variant?: 'h1' | 'h2' | 'bodyL' | 'bodyS' | 'bodyItalic' | 'captionM' | 'button'
 }
 
 const variantStyles: Record<string, string> = {
-  headingXL: clsx('text-headingXL font-bold leading-none', Intro.className),
-  headingS: clsx('text-headingS font-bold leading-none', Gilroy.className),
+  h1: clsx('text-H1 font-bold leading-none', Intro.className),
+  h2: clsx('text-H2 font-bold leading-none', Gilroy.className),
   bodyL: clsx('text-bodyL font-medium', Gilroy.className),
   bodyS: clsx('text-bodyS font-normal', Gilroy.className),
   bodyItalic: clsx('text-bodyItalic font-normal italic', Gilroy.className),
