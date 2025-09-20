@@ -1,6 +1,6 @@
 import { Application, FAQ, ProcessCases, ProcessHero } from '@/widgets'
 
-export default function Home() {
+export default function ProcessPage() {
   return (
     <div>
       <ProcessHero />

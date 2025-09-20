@@ -1,6 +1,6 @@
 import { Application, FAQ, Services, ServicesHero } from '@/widgets'
 
-export default function Home() {
+export default function ServicesPage() {
   return (
     <div>
       <ServicesHero />

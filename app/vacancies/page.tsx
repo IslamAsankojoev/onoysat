@@ -1,6 +1,6 @@
 import { Application, FAQ, VacanciesHero } from '@/widgets'
 
-export default function Home() {
+export default function VacanciesPage() {
   return (
     <div>
       <VacanciesHero />

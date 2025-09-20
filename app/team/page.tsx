@@ -1,6 +1,6 @@
 import { Application, FAQ, TeamHero, TeamRoles } from '@/widgets'
 
-export default function Home() {
+export default function TeamPage() {
   return (
     <div>
       <TeamHero />

@@ -1,6 +1,6 @@
 import { AboutHero, AboutWork, Application, FAQ } from '@/widgets'
 
-export default function Home() {
+export default function AboutPage() {
   return (
     <div>
       <AboutHero />

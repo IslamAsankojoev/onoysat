@@ -1,6 +1,6 @@
 import { Application, FAQ, PricingHero } from '@/widgets'
 
-export default function Home() {
+export default function PricingPage() {
   return (
     <div>
       <PricingHero />
