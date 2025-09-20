@@ -34,20 +34,18 @@ export const BlogHero = () => {
 
             {/* Центральная колонка - большая карточка SRM */}
             <div className="w-full lg:w-[381px] lg:mx-[12px] order-first lg:order-none">
-              <div className="relative w-full h-[400px] lg:h-[674px] bg-gradient-to-br bg-blue-dark overflow-hidden border-1 border-white-pure">
+              <div className="relative w-full h-[400px] lg:h-[674px] bg-gradient-to-br bg-blue-dark overflow-hidden border-1 border-white-pure py-10">
                 {/* Контент */}
-                <div className="relative z-10 p-[33.5px] h-full flex flex-col justify-center lg:justify-start lg:pt-[40px] text-center lg:text-left">
-                  <Typography
-                    variant="h1"
-                    className="text-[80px] lg:text-[163px] font-bold text-white leading-none mb-[26px]"
-                  >
+                <div className="relative z-10 flex flex-col justify-center lg:justify-start text-center">
+                  <Typography variant="h1" className="!text-[160px] text-white">
                     SRM
                   </Typography>
-                  <div className="w-full lg:w-[311px] h-[26px] flex items-center justify-center lg:justify-start">
-                    <Typography variant="bodyL" className="text-white/90 text-[16px] leading-tight">
-                      ошибки внедрения и как их избежать
-                    </Typography>
-                  </div>
+                  <Typography
+                    variant="button"
+                    className="absolute top-1/2 left-1/2 w-fit text-nowrap flex items-center justify-center lg:justify-start rounded-full bg-white-pure px-2 text-center -translate-x-1/2 -translate-y-1/2 text-accent-primary border border-accent-primary"
+                  >
+                    ошибки внедрения и как их избежать
+                  </Typography>
                 </div>
 
                 {/* Изображение */}
@@ -83,7 +81,7 @@ export const BlogHero = () => {
         </div>
 
         {/* Кнопка */}
-        <div className="flex justify-center pb-20 -mt-32 pt-8">
+        <div className="flex justify-center pb-20 -mt-40 pt-8">
           <Button>Смотреть все статьи</Button>
         </div>
       </div>
