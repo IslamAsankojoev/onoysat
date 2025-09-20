@@ -1,6 +1,8 @@
 'use client'
 
-import { Button, Typography } from '@/shared/ui'
+import { Card, CardContent } from '@/shadcn/components/ui/card'
+import { Input } from '@/shadcn/components/ui/input'
+import { ArrowIcon, Button, Typography } from '@/shared/ui'
 import { useForm } from 'react-hook-form'
 
 // Тип формы
@@ -26,22 +28,14 @@ export const Application = () => {
     },
   })
 
-  const onSubmit = async (data: FormData) => {
-    try {
-      // Обработка отправки формы
-      console.log('Form submitted:', data)
-      // Здесь можно добавить API запрос
-      // await submitForm(data)
-      reset()
-    } catch (error) {
-      console.error('Error submitting form:', error)
-    }
-  }
+  const onSubmit = handleSubmit((data) => {
+    console.log(data)
+  })
 
   return (
     <div className="bg-black relative w-full py-20">
       <div className="container mx-auto px-4">
-        <div className="max-w-[1178px] mx-auto">
+        <div className="">
           <div className="bg-gradient-to-br backdrop-blur-md p-16 relative overflow-hidden">
             <div
               style={{
@@ -49,7 +43,7 @@ export const Application = () => {
                 background:
                   'url(/54953303ce45ccd87f4856fbf32d41db472eb5ce.png) no-repeat center center / cover',
               }}
-              className="absolute inset-0"
+              className="absolute inset-0 scale-y-[-1]"
             ></div>
             <div className="flex flex-col lg:flex-row gap-12 relative z-10">
               {/* Левая часть - заголовок */}
@@ -71,86 +65,63 @@ export const Application = () => {
               </div>
 
               {/* Правая часть - форма */}
-              <div className="flex-1 max-w-[400px] bg-[#FEFEFE1A] p-6">
-                <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
-                  <div className="flex flex-col gap-2">
-                    <Typography
-                      variant="bodyM"
-                      className="text-white-pure text-[16px] leading-[16px]"
-                    >
-                      Имя
-                    </Typography>
-                    <input
-                      type="text"
-                      placeholder="Введите свое имя"
-                      {...register('name', { required: 'Имя обязательно для заполнения' })}
-                      className={`w-full px-4 py-3 bg-white border text-black placeholder-grey-input focus:outline-none focus:border-accent-primary transition-colors ${
-                        errors.name ? 'border-red-500' : 'border-white/20'
-                      }`}
-                    />
-                    {errors.name && (
-                      <p className="mt-1 text-sm text-red-400">{errors.name.message}</p>
-                    )}
-                  </div>
-
-                  <div className="flex flex-col gap-2">
-                    <Typography
-                      variant="bodyM"
-                      className="text-white-pure text-[16px] leading-[16px]"
-                    >
-                      Введите номер телефона
-                    </Typography>
-                    <input
-                      type="tel"
-                      placeholder="+996"
-                      {...register('phone', { required: 'Телефон обязателен для заполнения' })}
-                      className={`w-full px-4 py-3 bg-white border text-black placeholder-grey-input focus:outline-none focus:border-accent-primary transition-colors ${
-                        errors.phone ? 'border-red-500' : 'border-white/20'
-                      }`}
-                    />
-                    {errors.phone && (
-                      <p className="mt-1 text-sm text-red-400">{errors.phone.message}</p>
-                    )}
-                  </div>
-
-                  <div className="flex flex-col gap-2">
-                    <Typography
-                      variant="bodyM"
-                      className="text-white-pure text-[16px] leading-[16px]"
-                    >
-                      Компания
-                    </Typography>
-                    <input
-                      type="text"
-                      placeholder="Какая ниша у вашей компании"
-                      {...register('company')}
-                      className="w-full px-4 py-3 bg-white border text-black placeholder-grey-input focus:outline-none focus:border-accent-primary transition-colors"
-                    />
-                  </div>
-
-                  <div className="flex gap-2">
-                    <input type="checkbox" {...register('checkbox')} />
-                    <Typography
-                      variant="bodyM"
-                      className="text-white-pure text-[16px] leading-[16px]"
-                    >
-                      Хочу бриф (займёт 3 минуты)
-                    </Typography>
-                    {errors.company && (
-                      <p className="mt-1 text-sm text-red-400">{errors.company.message}</p>
-                    )}
-                  </div>
-
-                  <Button
-                    type="submit"
-                    variant="default"
-                    disabled={isSubmitting}
-                    className="w-full h-[70px] text-[16px] font-medium disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    {isSubmitting ? 'Отправка...' : 'Отправить заявку'}
-                  </Button>
-                </form>
-              </div>
+              <form onSubmit={onSubmit} className="w-full max-w-[400px]">
+                <Card className="bg-white-pure/10 rounded-none border-white-pure/10 p-0">
+                  <CardContent className="p-6 h-full flex flex-col justify-between">
+                    <div className="flex flex-col gap-2">
+                      <div>
+                        <Typography variant="bodyM" className="text-white-pure">
+                          Имя
+                        </Typography>
+                        <Input
+                          placeholder="ВВедите свое имя"
+                          className="bg-white-pure rounded-none h-9"
+                          {...register('name', { required: 'Имя обязательно для заполнения' })}
+                        />
+                      </div>
+                      <div>
+                        <Typography variant="bodyM" className="text-white-pure">
+                          Введите номер телефона
+                        </Typography>
+                        <Input
+                          placeholder="+996"
+                          className="bg-white-pure rounded-none h-9"
+                          {...register('phone', {
+                            required: 'Телефон обязательно для заполнения',
+                          })}
+                        />
+                      </div>
+                      <div>
+                        <Typography variant="bodyM" className="text-white-pure">
+                          Компания
+                        </Typography>
+                        <Input
+                          placeholder="Какая ниша у вашей компании"
+                          className="bg-white-pure rounded-none h-9"
+                          {...register('company', {
+                            required: 'Компания обязательно для заполнения',
+                          })}
+                        />
+                      </div>
+                      <div className="flex gap-2">
+                        <input
+                          type="checkbox"
+                          className="bg-white-pure rounded-none"
+                          {...register('checkbox', {
+                            required: 'Хочу бриф (займёт 3 минуты) обязательно для заполнения',
+                          })}
+                        />
+                        <Typography variant="bodyM" className="text-white-pure">
+                          Хочу бриф (займёт 3 минуты)
+                        </Typography>
+                      </div>
+                    </div>
+                    <Button className="w-fit mt-6">
+                      Получить аудит проекта <ArrowIcon />
+                    </Button>
+                  </CardContent>
+                </Card>
+              </form>
             </div>
           </div>
         </div>
