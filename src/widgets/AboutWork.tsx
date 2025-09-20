@@ -19,7 +19,7 @@ interface PrincipleCardProps {
 const PrincipleCard = ({ text, index, isInView }: PrincipleCardProps) => {
   return (
     <motion.div
-      className="bg-white box-border flex gap-[10px] items-center justify-center pl-[20px] pr-[30px] py-[20px] relative rounded-[600px] w-fit"
+      className="bg-white box-border flex gap-[10px] items-center justify-center pl-[20px] pr-[30px] py-[20px] relative rounded-[600px] w-fit overflow-hidden"
       initial={{ opacity: 0, y: 30, scale: 0.9 }}
       animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 30, scale: 0.9 }}
       transition={{
@@ -35,7 +35,7 @@ const PrincipleCard = ({ text, index, isInView }: PrincipleCardProps) => {
       whileTap={{ scale: 0.98 }}
     >
       <div 
-        className="absolute border-2 border-[#1a1a1d] border-solid inset-0 pointer-events-none rounded-[600px]"
+        className="absolute border-2 border-[#1a1a1d] border-solid inset-0 pointer-events-none rounded-[600px] overflow-hidden"
         aria-hidden="true"
       />
       
@@ -95,7 +95,7 @@ export const AboutWork = () => {
   ]
 
   return (
-    <div className="bg-black relative w-full py-20">
+    <div className="bg-black relative w-full py-20 overflow-hidden">
       {/* Фоновые декоративные элементы */}
       <motion.div
         ref={heroRef}
@@ -124,7 +124,7 @@ export const AboutWork = () => {
           transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
           whileHover={{ scale: 1.01 }}
         >
-          <div className="h-[580px] overflow-clip relative w-full flex flex-col items-center justify-center gap-10">
+          <div className="h-[580px] overflow-clip relative w-full flex flex-col items-center justify-center gap-10 overflow-hidden">
             {/* Фоновый элемент внутри карточки */}
             <motion.div
               className="absolute left-[-181px] size-[475px] top-[263px]"
