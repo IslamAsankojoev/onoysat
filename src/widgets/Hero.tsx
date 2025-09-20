@@ -109,7 +109,15 @@ export const Hero = () => {
               <Button variant="default" className="px-20">
                 <Typography variant="button" className="flex items-center gap-2">
                   Получить аудит
-                  <div className="flex items-center justify-center">
+                  <motion.div
+                    className="flex items-center justify-center"
+                    animate={{ x: [0, 5, 0] }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: 'easeInOut',
+                    }}
+                  >
                     <div className="rotate-180 scale-y-[-100%]">
                       <div className="w-[27px] h-[27px]">
                         <Image
@@ -121,7 +129,7 @@ export const Hero = () => {
                         />
                       </div>
                     </div>
-                  </div>
+                  </motion.div>
                 </Typography>
               </Button>
             </motion.div>
