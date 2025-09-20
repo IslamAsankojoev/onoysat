@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { Button, Typography } from '@/shared/ui'
+import { ArrowIcon, Button, Typography } from '@/shared/ui'
 import { motion } from 'framer-motion'
 import { useScrollAnimation } from '@/shared/hooks/useScrollAnimation'
 
@@ -77,27 +77,7 @@ export const ProcessHero = () => {
               <Button variant="default" className="px-20">
                 <Typography variant="button" className="flex items-center gap-2">
                   Получить аудит
-                  <motion.div
-                    className="flex items-center justify-center"
-                    animate={{ x: [0, 5, 0] }}
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      ease: 'easeInOut',
-                    }}
-                  >
-                    <div className="rotate-180 scale-y-[-100%]">
-                      <div className="w-[27px] h-[27px]">
-                        <Image
-                          src={imgSend}
-                          alt="send icon"
-                          width={27}
-                          height={27}
-                          className="w-full h-full"
-                        />
-                      </div>
-                    </div>
-                  </motion.div>
+                  <ArrowIcon />
                 </Typography>
               </Button>
             </motion.div>

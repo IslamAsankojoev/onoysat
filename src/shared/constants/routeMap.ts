@@ -19,9 +19,9 @@ export const routeMap = {
     title: 'Процесс работы',
     path: '/process',
   },
-  cost: {
+  pricing: {
     title: 'Стоимость',
-    path: '/cost',
+    path: '/pricing',
   },
   about: {
     title: 'О нас',
