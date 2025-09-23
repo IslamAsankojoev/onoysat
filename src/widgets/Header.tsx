@@ -16,13 +16,16 @@ import {
   SheetTrigger,
 } from '@/shadcn/components/ui/sheet'
 import { TextAlignJustify } from 'lucide-react'
+import { useState } from 'react'
 
 export const Header = () => {
+  const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
   const router = useRouter()
 
   const handleClick = (path: string) => {
     router.push(path)
+    setIsOpen(false)
   }
 
   return (
@@ -44,23 +47,22 @@ export const Header = () => {
               </Link>
             ))}
           </div>
-          <Sheet>
+          <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger className="md:hidden">
               <TextAlignJustify className="text-white" />
             </SheetTrigger>
             <SheetContent className="bg-blue-dark/75 backdrop-blur-md border-none p-4">
               <div className="flex flex-col gap-2 pt-10">
                 {Object.values(routeMap).map((route) => (
-                  <Button
+                  <button
                     key={route.path}
-                    variant="white"
-                    size='sm'
+                    className="text-white-pure transition-all duration-300 bg-blue-dark/75 hover:bg-accent-primary cursor-pointer py-2"
                     onClick={() => handleClick(route.path)}
                   >
                     <Typography variant="button">
                       {route.title}
                     </Typography>
-                  </Button>
+                  </button>
                 ))}
               </div>
             </SheetContent>
