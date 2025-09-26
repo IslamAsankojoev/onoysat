@@ -5,46 +5,38 @@ export const routeMap = {
   },
   services: {
     title: 'Услуги',
-    path: '/services',
-  },
-  industries: {
-    title: 'Отрасли',
-    path: '/industries',
+    path: '/services/',
   },
   cases: {
     title: 'Кейсы',
-    path: '/cases',
+    path: '/cases/',
   },
   process: {
     title: 'Процесс работы',
-    path: '/process',
+    path: '/process/',
   },
   pricing: {
     title: 'Стоимость',
-    path: '/pricing',
+    path: '/pricing/',
   },
   about: {
     title: 'О нас',
-    path: '/about',
+    path: '/about/',
   },
   team: {
     title: 'Команда',
-    path: '/team',
+    path: '/team/',
   },
   vacancies: {
     title: 'Вакансии',
-    path: '/vacancies',
+    path: '/vacancies/',
   },
   blog: {
     title: 'Блог',
-    path: '/blog',
-  },
-  faq: {
-    title: 'FAQ',
-    path: '/faq',
+    path: '/blog/',
   },
   contacts: {
     title: 'Контакты',
-    path: '/contacts',
+    path: '/contacts/',
   },
 }
