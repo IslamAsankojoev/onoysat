@@ -2,7 +2,6 @@
 
 import { ArrowIcon, Button, Typography } from '@/shared/ui'
 import { motion } from 'framer-motion'
-import { useScrollAnimation } from '@/shared/hooks/useScrollAnimation'
 
 const influenseFactors = ['Ниша', 'Цели', 'Сроки', 'Требуемая команда', 'Рекламный бюджет']
 

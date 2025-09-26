@@ -5,8 +5,6 @@ import { ArrowIcon, Button, Typography } from '@/shared/ui'
 import { motion } from 'framer-motion'
 import { useScrollAnimation } from '@/shared/hooks/useScrollAnimation'
 
-// Импорты изображений
-const imgSend = '/01cfeaf1a961aa2dea706db4613c3ada3546d5cc.svg'
 const imgEllipse2 = '/grid-pattern.png'
 
 export const ProcessHero = () => {

@@ -17,8 +17,6 @@ export const Application = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting },
-    reset,
   } = useForm<FormData>({
     defaultValues: {
       name: '',
@@ -56,8 +54,8 @@ export const Application = () => {
                     Оставьте заявку
                   </Typography>
                   <Typography
-                    variant="bodyL"
-                    className="text-white-pure text-[26px] leading-[26px]"
+                    variant="h2"
+                    className="text-white-pure"
                   >
                     вернёмся в течение рабочего дня
                   </Typography>

@@ -3,16 +3,13 @@
 import Image from 'next/image'
 
 import logo from '@/public/logo.png'
-import { Button, routeMap, Typography } from '@/shared'
+import { routeMap, Typography } from '@/shared'
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import clsx from 'clsx'
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
   SheetTrigger,
 } from '@/shadcn/components/ui/sheet'
 import { TextAlignJustify } from 'lucide-react'

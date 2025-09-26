@@ -4,7 +4,6 @@ import Image from 'next/image'
 import { Typography } from '@/shared/ui'
 
 // Импорты изображений
-const imgBackground = '/8e79840ab11ff2e305db63c031c592f9cfa6e0d6.png'
 const imgArrow = '/729a11c42922f057ce60970f30d13de36d884bfc.svg'
 const imgLine2 = '/8f580bec74fa25eba5dd9cb7c7e35695cb37ae98.svg'
 

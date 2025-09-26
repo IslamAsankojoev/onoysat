@@ -11,7 +11,6 @@ export const Contact = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
   } = useForm({
     defaultValues: {
       name: '',

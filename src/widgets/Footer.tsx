@@ -7,9 +7,6 @@ import { colors } from '@/shared'
 
 // Импорты изображений
 const imgLogo = '/0b42a7fe04288663ffe78debef4adaae3100becd.svg'
-const imgInstagram = '/fc191b1b54ceef1ec8251971e5be742f00dbb669.svg'
-const imgFacebook = '/3fff7db53cf8e62f8d8bc348c7985ea1cccb4ace.svg'
-const imgYoutubeGroup = '/e1c4bd268b85a3a7c4366025f63dc88e83a90a79.svg'
 
 interface FooterLinkProps {
   href: string
@@ -48,21 +45,6 @@ const FooterSection = ({ title, links }: FooterSectionProps) => {
         ))}
       </div>
     </div>
-  )
-}
-
-interface SocialIconProps {
-  icon: string
-  alt: string
-  href: string
-  size?: 'sm' | 'md'
-}
-
-const SocialIcon = ({ icon, alt, href, size = 'sm' }: SocialIconProps) => {
-  return (
-    <a href={href} target="_blank" rel="noopener noreferrer">
-      <Image src={icon} alt={alt} width={25} height={25} />
-    </a>
   )
 }
 

@@ -6,10 +6,7 @@ import { motion } from 'framer-motion'
 import { useScrollAnimation } from '@/shared/hooks/useScrollAnimation'
 
 // Импорты изображений
-const imgSend = '/01cfeaf1a961aa2dea706db4613c3ada3546d5cc.svg'
 const imgEllipse2 = '/af4ee9f8283046cc4514094b853008efea8a7847.png'
-const imgHeroPattern = '/3e0b53deb7f94115e48cc969b62127244a0e8fd7.svg'
-const imgFrame = '/7039737abe86ad8ac7bc3b1c19a46f72be6500db.svg'
 
 const otrasli = ['Недвижимость', 'Туризм', 'Медицина', 'Образование', 'B2B']
 

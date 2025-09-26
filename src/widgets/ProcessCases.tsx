@@ -16,7 +16,7 @@ interface ProcessStepProps {
   image: string
 }
 
-const ProcessStep = ({ number, title, description, isInView, image }: ProcessStepProps) => {
+const ProcessStep = ({ title, description, isInView, image }: ProcessStepProps) => {
   return (
     <motion.div
       className="flex flex-col items-center text-center p-8 h-full"
