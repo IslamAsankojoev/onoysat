@@ -51,7 +51,7 @@ export const Application = () => {
                 <div className="mb-8">
                   <Typography
                     variant="h1"
-                    className="text-white-pure text-[50px] font-normal leading-[50px] font-intro mb-4"
+                    className="text-[50px] bg-clip-text text-transparent text-5xl font-extrabold bg-gradient-to-r from-white to-accent-primary mb-4"
                   >
                     Оставьте заявку
                   </Typography>
