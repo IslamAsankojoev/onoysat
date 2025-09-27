@@ -2,8 +2,9 @@
 
 import { Particles, Typography } from '@/shared/ui'
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 
-export const AboutHero = () => {
+export default function NotFound() {
   return (
     <div className="relative w-full h-screen bg-black overflow-hidden">
       {/* Контент */}
@@ -16,31 +17,25 @@ export const AboutHero = () => {
         >
           {/* Заголовок */}
           <motion.div
-            className="mb-12"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5, ease: 'easeOut' }}
           >
             <Typography
               variant="h1"
-              className="text-[50px] bg-clip-text text-transparent text-5xl font-extrabold bg-gradient-to-r from-white to-accent-primary"
+              className="!text-[150px] bg-clip-text text-transparent font-extrabold bg-gradient-to-r from-white to-accent-primary"
             >
-              О компании
+              404
             </Typography>
           </motion.div>
-
-          {/* Описание */}
           <motion.div
-            className="max-w-[1116px] mx-auto"
+            className="mx-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7, ease: 'easeOut' }}
           >
-            <Typography variant="h2" className="text-[#6E708C]">
-              Мы — команда, которая выстраивает продажи как систему: стратегия, люди, процессы,
-              технологии и контроль. Мы не «делаем упаковку ради упаковки» — мы строим машину
-              сделок. С нами вы получаете: понятные шаги, измеримые KPI, прозрачные отчёты и
-              предсказуемый рост
+            <Typography variant="bodyL" className="text-white !leading-[26px]">
+              Страница не найдена <br />вы можете вернуться на <br /> <Link href="/" className='underline'>главную страницу</Link>
             </Typography>
           </motion.div>
         </motion.div>
